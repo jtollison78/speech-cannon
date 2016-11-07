@@ -19,9 +19,288 @@
   (cell= (.log js/console (:trace error)))
   (doit))
 
+
+(defc db [
+;(cell= (str "<a href=\"" (first lnks) "\">XXXX</a>"))
+;**chapter largely supplant topics, BUT some crossover("full text") (reason for not doing a tree?)
+;:chapter [1 1] = science/papers, brain/physiologic/endogamous
+;			[1 2] = endocrine disruptors
+;			[1 3] = social science
+;:chapter [2 1] = news/politics/bathrooms, cis
+;			[2 2] = bathroom other
+;			[2 3] = 
+;:chapter [3 1] = people, scientists	[3 1 1] = Paul McHugh,...
+;			[3 2] = activists
+;:chapter [4 1] = other
+;**so, yeah, need boxes to click on that gather links for ea group level
+;**can we generate from ch-def + tags?? table of contents is a tree? select directly, from the top
+
+
+{:chapter [1 1] :links ["https://en.wikipedia.org/wiki/Intersex"], :texts ["Intersex" "'Intersex... involve genital ambiguity, ...chromosomal genotype and sexual phenotype other than XY-male and XX-female.'" "'Intersex, in humans and other animals, describes variations in sex characteristics including chromosomes, gonads, or genitals that... 'do not fit typical binary notions of male or female bodies'. Such variations may involve genital ambiguity, and combinations of chromosomal genotype and sexual phenotype other than XY-male and XX-female.'"], :tags #{"intersex"}}  ;"No one denies Intersex conditions which often lead to visible physical differences"
+
+{:chapter [1 1] :links ["http://www.springer.com/us/book/9781461474401"], :texts ["textbook" "Textbook: Gender Dysphoria and Disorders of Sex Development. Written by 32 authors across 6 countries." "Textbook: Gender Dysphoria and Disorders of Sex Development. Written by 32 authors across 6 countries."], :tags #{"textbook"}}
+{:chapter [1 1] :links ["http://aebrain.blogspot.com/p/transsexual-and-intersex-gender-identity.html"], :texts ["trans science links" "Zoe Brain has collected lots of trans and intersex science" "Zoe Brain has collected lots of trans and intersex science"], :tags #{"Zoe Brain" "people"}}
+{:chapter [1 1] :links ["http://aebrain.blogspot.com/2016/03/try-this-quick-quiz.html"], :texts ["#notall-wo-men" "'...1 in 300 men who are not 46, XY , and the 1 in 600 women who aren't 46, XX ...' -Zoe Brain" "'...1 in 300 men who are not 46, XY , and the 1 in 600 women who aren't 46, XX ...' -Zoe Brain"], :tags #{"intersex" "Zoe Brain" "people"}}
+
+{:chapter [1 1] :links ["http://www.ncbi.nlm.nih.gov/pubmed/16010463"] :texts ["5alpha-RD-2 and 17beta-HSD-3 deficiencies" "5alpha-RD-2 and 17beta-HSD-3 deficiencies" "'Individuals with 5alpha-reductase-2 deficiency (5alpha-RD-2) and 17beta-hydroxysteroid dehydrogenase-3 deficiency (17beta-HSD-3) are often raised as girls. Over the past number of years, this policy has been challenged because many individuals with these conditions develop a male gender identity and make a gender role change after puberty. The findings also raised doubts regarding the hypothesis that children are psychosexually neutral at birth and emphasized the potential role of prenatal brain exposure to androgens in gender development.'"] :tags #{"intersex" "genes" "social construction"}}
+
+{:chapter [1 1] :links ["http://www.nature.com/nature/journal/v378/n6552/abs/378068a0.html" "http://www.genderpsychology.org/psychology/BSTc.html"], :texts ["original BSTc study" "BSTc study. The original study that cut into trans heads and looked at brains." "'Here we show that the volume of the central subdivision of the bed nucleus of the stria terminalis (BSTc), a brain area that is essential for sexual behaviour3,4, is larger in men than in women. A female-sized BSTc was found in male-to-female transsexuals. The size of the BSTc was not influenced by sex hormones in adulthood and was independent of sexual orientation.'"], :tags #{"paper" "Dick Swaab" "BSTc"}}
+{:chapter [1 1] :links ["http://press.endocrine.org/doi/full/10.1210/jcem.85.5.6564"], :texts ["A second BSTc study" "a second BSTc study, with a better sample size." "'The number of SOM neurons in the BSTc of heterosexual men (32.9 +/- 3.0 x 103) was 71% higher than that in heterosexual women (19.2 +/- 2.5 x 103) (P < 0.006), ...The number of neurons in the BSTc of male-to-female transsexuals was similar to that of females (19.6 +/- 3.3 x 103) (P = 0.83)... no clear difference in the BSTc number of neurons between early onset (T2, T5, T6) and late-onset transsexuals'"], :tags #{"paper" "full text" "Dick Swaab" "BSTc"}}
+{:chapter [1 1] :links ["https://en.wikipedia.org/wiki/INAH_3"], :texts ["INAH3 wiki" "The INAH3 is a sexually dimorphic structure in the hypothalamus" "INAH-3 is the short form for the third interstitial nucleus of the anterior hypothalamus, and is the sexually dimorphic nucleus of humans. The INAH-3 is significantly larger in males than females irrespective of age and larger in heterosexual males than in homosexual males and heterosexual females. Homologues of the INAH-3 have been observed taking a direct role in sexual behavior in rhesus monkeys, sheep,and rats"], :tags #{"INAH3"}}
+{:chapter [1 1] :links ["http://www.ncbi.nlm.nih.gov/pubmed/18980961?dopt=Abstract"], :texts ["INAH3 paper" "INAH3 volume and number of neurons of male-to-female transsexual people is similar to that of control females" "showed for the first time[2008] that INAH3 volume and number of neurons of male-to-female transsexual people is similar to that of control females"], :tags #{"paper" "full text" "Dick Swaab" "INAH3"}} ;"Alicia Garcia-Falgueras" 
+{:chapter [1 1] :links ["http://www.functionalneurology.com/materiale_cic/389_XXIV_1/3373_sexual/index.html"], :texts ["Intermediate brain" "One man lived with gender dysphoria, didn't transition, and was shown to have an intermediate brain structure." "'One person we studied had untreated male gender dysphoria (S7), took no hormones and kept his transsexual feelings under wraps. He appeared to have a large INAH3 volume - in the male range - but a female INAH3 number of neurons (68) and a female BSTc somatostatin neuron number (95). Hence, this individual's hypothalamic characteristics were mid-way between male and female values.'"], :tags #{"paper" "full text" "Dick Swaab" "INAH3" "BSTc"}} ;"Alicia Garcia-Falgueras" 
+
+{:chapter [1 1] :links ["http://onlinelibrary.wiley.com/doi/10.1111/j.1743-6109.2008.00981.x/abstract"], :texts ["cerebral activation wrt visual erotica" "'cerebral activation pattern in MTF transsexuals... similar to female controls compared... during viewing of erotic stimuli'" "'Conclusions. We revealed a cerebral activation pattern in MTF transsexuals compared with male controls similar to female controls compared with male controls during viewing of erotic stimuli, indicating a tendency of female-like cerebral processing in transsexualism.'"], :tags #{"paper"}} ;**better twitter string
+{:chapter [1 1] :links ["http://www.ncbi.nlm.nih.gov/pubmed/19751389"], :texts ["spatial cognition" "transsexual groups... stronger activation of temporo-occipital regions in comparison with men without GID" "Both transsexual groups revealed stronger activation of temporo-occipital regions in comparison with men without GID... The present study indicates that there are a priori differences between men and transsexual patients caused by different neurobiological processes or task-solving strategies and that these differences remain stable over the course of hormonal treatment."], :tags #{"paper"}}
+{:chapter [1 1] :links ["http://www.ncbi.nlm.nih.gov/pubmed/20132527"], :texts ["cerebral blood flow" "GID subjects had a significant decrease in rCBF... significant increase in the right insula compared to control" "'RESULTS: GID subjects had a significant decrease in rCBF in the left anterior cingulate cortex (ACC) and a significant increase in the right insula compared to control subjects.
+CONCLUSIONS: The ACC and insula are regions that have been noted as being related to human sexual behavior and consciousness. From these findings, useful insights into the biological basis of GID were suggested.'"], :tags #{"paper" "full text"}}
+{:chapter [1 1] :links ["http://dx.doi.org/10.1016/j.jpsychires.2010.11.007" ], :texts ["white matter" "white matter microstructure pattern... falls halfway between the pattern of male and female controls" "'results show that the white matter microstructure pattern in untreated MtF transsexuals falls halfway between the pattern of male and female controls'"], :tags #{"paper"}}  ;**second article free? Should move to separate fact
+;"http://www.ncbi.nlm.nih.gov/pubmed/20562024" ;choose one??
+
+
+{:chapter [1 1] :links ["http://www.ncbi.nlm.nih.gov/pubmed/19341803"], :texts ["Grey matter" "MTF transsexuals show a significantly larger volume of regional gray matter in the right putamen compared to men" "'MTF transsexuals show a significantly larger volume of regional gray matter in the right putamen compared to men. These findings provide new evidence that transsexualism is associated with distinct cerebral pattern, which supports the assumption that brain anatomy plays a role in gender identity.'"], :tags #{"paper" "full text"}}
+{:chapter [1 1] :links ["http://cercor.oxfordjournals.org/content/18/8/1900.abstract"], :texts ["A study on smell" "pattern of activation away from the biological sex... intermediate... w/ predominantly female-like features" "Because our MFTRs were nonhomosexual, the results are unlikely to be an effect of sexual practice. Instead, the data implicate that transsexuality may be associated with sex-atypical physiological responses in specific hypothalamic circuits, possibly as a consequence of a variant neuronal differentiation."], :tags #{"paper" "full text"}}
+{:chapter [1 1] :links ["http://dbm.neuro.uni-jena.de/pdf-files/Luders-JBBS11.pdf" ], :texts ["Cortical thickness" "Cortical thickness is increased in trans brains, decreased in schizophrenia" "Results: Results revealed thicker cortices in MTF transsexuals, both within regions of the left hemisphere (i.e., frontal and orbito-frontal cortex, central sulcus, perisylvian regions, paracentral gyrus) and right hemisphere (i.e., pre-/post-central gyrus, parietal cortex, temporal cortex, precuneus, fusiform, lingual, and orbito-frontal gyrus)."], :tags #{"paper" "full text"}}
+
+;"http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2719488/"
+{:chapter [1 1] :links ["http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2190741/"] :texts ["XY woman -> XY daughter" "There is one account of an XY woman giving birth to an XY daughter." "'Context: We report herein a remarkable family in which the mother of a woman with 46,XY complete gonadal dysgenesis was found to have a 46,XY karyotype in peripheral lymphocytes, mosaicism in cultured skin fibroblasts (80% 46,XY and 20% 45,X) and a predominantly 46,XY karyotype in the ovary (93% 46,XY and 6% 45,X).'"] :tags #{"chromosomes" "paper" "full text"}}
+{:chapter [1 1] :links ["http://ieet.org/index.php/S=c193d2ed83c71752f2c6a98b736e21cecdcd931b/IEET/more/rothblatt20120312"] :texts ["Limbic system and SPL" "The Limbic system and SPL are often, but not always, effected together" "'...transsexual people, whose neuro-anatomy is female in some areas, male in others, and corresponds to neither in yet others. When the Limbic nucleus is feminised, typically feminine emotional patterns are found, and these lead to a feminine gender identity. When the Superior Parietal Lobule (SPL) is feminised as well - as it often is - the 'body map' is for female primary and secondary sex characteristics - breasts, vagina etc - and any mismatch with reality causes immense distress.' -Martine Rosenblatt"] :tags #{"SPL" "limbic"}}
+
+{:chapter [1 2] :links ["http://www.nel.edu/22_6/NEL220601R02_Dorner_.pdf"], :texts ["genes and endocrine disruptor connection" "Dorner Gunter discusses the effects of CAH as well as DDT/DDE" "Alterations of sex hormone levels during pre- or perinatal sexual brain organization - responsible for long-term changes of gonadotropin secretion, sexual orientation, and gender role behavior - can be caused by: 1. Genetic effects... a) 21-hydroxylase genes on chromosome 6, b) 3B-hydro xy steroid dehydrogenase genes in chromosome 1 or c) X-chromosomal genes, and 2. Epigenetic effects, such as a) stressful situations - especially in combination with mutations - and b) endocrine disrupters, e.g. the pesticide DDT..."], :tags #{"paper" "ddt/dde" "endocrine disruptor" "full text" "CAH" "genes"}} ; "21oh" "3b-hsd"
+{:chapter [1 2] :links ["https://thinksteroids.com/community/threads/prenatal-exposure-to-diethylstilbestrol-des.134253671/"], :texts ["DES" "Prenatal Exposure to Diethylstilbestrol (DES) in Males and Gender-Related Disorders" "'By July 2004, a sample of approximately 500 males with confirmed (60% of total) or strongly suspected DES exposure (40% of total) participated in the DES Sons International Network research and provided a summary of major health, medical, and psychological issues they had encountered across the lifespan. ...More than 150 network members with confirmed or strongly suspected prenatal DES exposure identified as either transsexual, pre- or post-operative, (90 members), transgender (48 members), gender dysphoric (17 members), or intersex (3 members).'"], :tags #{"paper" "endocrine disruptor" "full text" "DES"}}  ;Scott P. Kerlin, Ph.D. DES Sons International Network
+{:chapter [1 2] :links ["http://onlinelibrary.wiley.com/doi/10.1111/j.1365-2605.2009.01019.x/abstract"], :texts ["phthalate" "Prenatal phthalate exposure and reduced masculine play in boys" "'Concentrations of dibutyl phthalate metabolites, mono-n-butyl phthalate (MnBP) and mono-isobutyl phthalate (MiBP) and their sum, were associated with a decreased (less masculine) composite score in boys... These data, although based on a small sample, suggest that prenatal exposure to antiandrogenic phthalates may be associated with less male-typical play behaviour in boys.'"], :tags #{"paper" "endocrine disruptor" }} ;**full (not free) text ??
+
+{:chapter [1 3] :links ["https://spectrumnews.org/features/deep-dive/living-between-genders/"], :texts ["Gender Dysphoria and Autism" "8-10 percent of children/adolescents seen at gender clinics... meet the criteria for autism" "'Between 8 and 10 percent of children and adolescents seen at gender clinics around the world meet the diagnostic criteria for autism' -Deborah Rudacille"], :tags #{"aspergers" "children" "people"}}
+{:chapter [1 3] :links ["http://ai.eecs.umich.edu/people/conway/TS/TSprevalence.html"], 
+	:texts ["MTF surgery=1:2500, intrinsic prevalence=~1:500" "MTF surgery=1:2500, intrinsic prevalence=~1:500" "'We find that the prevalence of SRS is at least on the order of 1:2500, and may be twice that value. We thus find that the intrinsic prevalence of MtF transsexualism must be on the order of ~1:500 and may be even larger than that.' -Lynn Conway"],
+	:tags #{"surgery" "statistics" "Lynn Conway" "people"}}
+{:chapter [1 3] :links ["http://avitale.com/TherapeuticErrors.htm"] :texts ["Dysphoria" "'Typically, at time of presentation these individuals report that either their lives are in ruin...' -Anne Vitale" "'Typically, at time of presentation these individuals report that either their lives are in ruin, or they are very afraid that... they would loose all that they cherish... High anxiety and deep depression with concurrent suicide ideation is common. One of the most extreme cases I have treated was that of a 50 year old genetic male, married and the father of 3 grown children with an international reputation as a scientist who... sought out treatment for his gender issues was because the number of times he found himself curled up in the corner of his office in the fetal position muffling his cry was increasing. That is not dysphoria, that is pure misery.' -Anne Vitale"] :tags #{"dysphoria"}}
+
+;{:chapter [] :links [""] :texts ["" "" ""] :tags #{}}
+
+;**moved bathroom links down
+{:chapter [4 1] :links ["http://www.advocate.com/transgender/2016/5/27/dad-attacked-mens-bathroom-bringing-5-year-old-daughter-pee"] :texts ["" "Adams was trying to leave the bathroom with his daughter... when he was sucker-punched in the face" "'Christopher Adams said the man started 'freaking out' because 'my daughter was in the men's bathroom.' Adams was trying to leave the bathroom with his daughter, Emery, and 7-year-old son, Kyler, when he was sucker-punched in the face by the unidentified man, then repeatedly hit and kicked.'"] :tags #{"bathrooms" ""}}
+{:chapter [4 1] :links ["http://www.newnownext.com/aggressive-cop-forces-gay-woman-out-of-womens-bathroom-for-not-having-id/04/2016/0"] :texts ["lesbian. bathroom. cop. id." "'Aggressive Cop Forces Gay Woman Out Of Ladies Room For Not Having ID'" ""] :tags #{"laws" "bathrooms" "lesbian" "cis"}}
+{:chapter [4 1] :links ["http://www.gaystarnews.com/article/lesbian-teen-told-leave-uk-mcdonalds-bathroom-staff-thought-male/#gs.j9cHLGI"] :texts ["lesbian? no bathroom w/o id" "Lesbian teen used UK McDonald's bathroom and staff told her to leave because they thought she was male" ""] :tags #{"laws" "bathrooms" "UK" "lesbian" "cis"}}
+{:chapter [4 1] :links ["http://www.rawstory.com/2016/05/woman-who-donated-hair-to-cancer-patients-mistaken-for-transgender-man-and-harassed-in-restroom/"] :texts ["cancer patient. bathroom harassment." "'Woman who donated hair to cancer patients mistaken for trans woman and harassed in restroom'" ""] :tags #{"laws" "bathrooms" "cis"}}
+{:chapter [4 1] :links ["http://www.mediaite.com/online/ok-lawmakers-introduce-bill-declaring-state-of-emergency-over-bathrooms/?utm_content=buffer7d197&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer"] :texts ["bathroom state of emergency" "OK Lawmakers Introduce Bill Declaring State of Emergency Over... Bathrooms" ""] :tags #{"laws" "bathrooms"}} 
+{:chapter [4 1] :links ["http://www.advocate.com/business/2015/06/17/detroit-woman-kicked-out-restaurant-bathroom-looking-man-sues"] :texts ["Look like a man? no bathroom" "'Woman Sues Restaurant That Ejected Her From Bathroom for Looking 'Like a Man''" ""] :tags #{"laws" "bathrooms" "cis"}}
+{:chapter [4 1] :links ["http://www.nydailynews.com/news/politics/texas-man-woman-bathroom-check-gender-article-1.2622029"] :texts ["dressed like a man? no bathroom" "Texas man follows woman into a bathroom to check her gender because she was 'dressed like a man'" ""] :tags #{"laws" "bathrooms" "cis"}}
+{:chapter [4 1] :links ["http://www.joemygod.com/2016/05/02/american-family-association-were-testing-target-by-sending-men-into-the-ladies-room-audio/"] :texts ["'testing' Target" "...activists have been 'testing' Target's policy by sending men into women's rooms..." "the American Family Association's director of governmental affairs, Sandy Rios, said that activists have been 'testing' Target's policy by sending men into women's rooms at the retail chain."] :tags #{"bathrooms" "hoax" "Target"}}
+
+{:chapter [4 4] :links ["http://www.abc15.com/news/region-west-valley/surprise/pd-woman-arrested-for-videotaping-photographing-women-in-public-restrooms-around-valley?utm_content=buffer67b59&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer"] :texts ["[cis] Woman arrested for videotaping, photographing women in Valley public restrooms" "Woman arrested for videotaping, photographing women in Valley public restrooms" "Woman arrested for videotaping, photographing women in Valley public restrooms"] :tags #{}}
+
+{:chapter [4 2] :links ["https://www.reddit.com/r/asktransgender/comments/4fvli3/my_manager_banned_me_from_using_the_bathroom/"], :texts ["HB2 + intersex" "North Carolina law caused problems for intersex people too" ""], :tags #{"HB2" "bathrooms"}}
+{:chapter [4 2] :links ["http://www.nytimes.com/2016/05/22/us/transgender-bathroom-obama-schools.html"] :texts ["Palatine, Ill? 2013?" "When/Where did this all start? 'Palatine, Ill? in late 2013?'" ""] :tags #{"bathrooms"}}
+{:chapter [4 2] :links ["http://www.npr.org/2016/05/15/477954537/when-a-transgender-person-uses-a-public-bathroom-who-is-at-risk"] 
+	:texts ["bathroom before" "Were bathrooms a significant problem before? Opinions differ" ""] :tags #{"bathrooms"}}  ;**add diedre's quote
+;{:chapter [4 2] :links ["http://williamsinstitute.law.ucla.edu/wp-content/uploads/Herman-Gendered-Restrooms-and-Minority-Stress-June-2013.pdf"] :texts ["" "" ""] :tags #{"bathrooms"}}
+;https://www.youtube.com/watch?v=dYS-VsWJevY  ;another cis bathroom case?
+{:chapter [4 2] :links ["https://www.youtube.com/watch?v=gEgDPn0-iGY"] :texts ["South Carolina Sheriff" "South Carolina Sheriff will..." ""] :tags #{"bathrooms"}}
+{:chapter [4 2] :links ["http://www.chron.com/news/politics/houston/article/Mayor-drops-bathroom-provision-from-5474575.php"] :texts ["Houston bathroom ordinance" "About 6 months after Palitine, Il in 2013, there was the Houston ordinance." ""] :tags #{"bathrooms" "laws"}}
+{:chapter [4 2] :links ["http://time.com/4315165/north-carolina-hb2-parenthood/"] :texts ["discrimination at fertility clinic" "'My wife and I were refused service at a fertility clinic after HB2 passed'" ""] :tags #{"UK" "HB2" "discrimination"}}  ;??
+{:chapter [4 2] :links ["https://www.reddit.com/r/asktransgender/comments/4ljpex/who_knew_you_could_be_gatekeeped_over_a_tracheal/"] :texts ["discrimination by trach shave surgeon" "descrimination by trach shave surgeon 1.5yrs after starting hormones" ""] :tags #{"discrimination"}}
+
+{:chapter [4 2] :links ["http://www.charlotteobserver.com/news/politics-government/article68401147.html"] :texts ["Some background on HB2" "Some background on HB2" ""] :tags #{"HB2" "laws" "bathrooms"}}  ;**better twitter text
+{:chapter [4 4] :links ["http://www.gaystarnews.com/article/kansas-new-transgender-birth-certificate-bill-next-legal-attack-lgbti-people/?utm_content=buffer3f86e&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer#gs.EfWopA0"] 
+	:texts ["Kansas birth certificate law" "'Kansas will ban transgender people from updating their birth certificate'" ""] :tags #{"laws"}}
+
+{:chapter [4 3] :links ["https://www.youtube.com/watch?v=NTIsmae4yBw"], :texts ["bathrooms issue is political" "Opinions on the bathroom issue are mixed, with some transwomen believing it wasn't an important issue" ""], :tags #{"bathrooms"}}  ;14
+{:chapter [4 3] :links ["http://overlawyered.com/2016/05/deirdre-mccloskey-transgender-bathroom-story/"], :texts ["bathrooms are 'phony issue'" "'The bathroom 'issue' is entirely phony. It has never been a problem' -Diedre McCloskey" ""], :tags #{"bathrooms" "Diedre McCloskey" "people"}} 
+
+{:chapter [3 1] :links ["http://ai.eecs.umich.edu/people/conway/TS/Bailey/McHugh/McHugh%20on%20Transsexualism.htm"], :texts ["case against Paul McHugh" "Lynn Conway presents the case against Paul McHugh" ""], :tags #{"Lynn Conway" "Paul McHugh" "people"}} 
+{:chapter [3 1] :links ["http://www.tsroadmap.com/info/paul-mchugh.html"], :texts ["more against Paul McHugh" "Andrea James' criticisms of Paul McHugh" ""], :tags #{"Paul McHugh" "people"}} ;"Andrea James" ;??
+{:chapter [3 1] :links ["http://www.springer.com/us/book/9781461474401"], 
+	:texts ["psychiatrist vs endocrinologist" "Psychiatrist McHugh gets 1 ref in Springer textbook. Neuroendocrinologist Dick Swaab gets 20x that." "Paul McHugh, a psychiatrist with Johns Hopkins, is referenced in the Springer textbook once, an article from '92. He is now in his mid-80s. Things moved forward and it's not clear that he's read anything recent, or even in the right field. Dick Swaab, a Dutch specialist in neuroendocrinology, has 20x the mentions, from the 1st study to cut open tran brains to look inside, in '95, to recent papers in '08 and '11, discussing observed differences in the brain in trans populations. He has 51% more total citations listed in ncbi and, I would argue, in a much more relevant field."], :tags #{"Dick Swaab" "Johns Hopkins" "textbook" "endocrinologist" "psychiatrist" "Paul McHugh" "people"}} 
+
+;why no full quote??
+{:chapter [3 1] :links ["http://www.newson6.com/story/5350956/truth-wins-out-rebukes-ex-gay-therapist-for-promoting-bullying-in-schools"], :texts ["Dr Joseph Berger anti-bully bully" "Dr Joseph Berger, a leader of anti-bullying efforts, suggested to..." "''I suggest, indeed, letting children who wish go to school in clothes of the opposite sex -- but not counseling other children to not tease them or hurt their feelings,' Dr. Berger wrote on NARTH's website. 'On the contrary, don't interfere, and let the other children ridicule the child...''"], :tags #{"people"}} ;"bullying" "Joseph Berger"  
+;"http://aebrain.blogspot.com/2016/04/safe-schools.html"   ;pick one??
+;{:chapter [3 1] :links ["http://www.annelawrence.com/resurrected.html"], :texts ["Anne Lawrence" "Anne Lawrence self IDs as AGP. Doesn't think it's 'pathologizing or degrading'" "...unfortunate tendency to see Blanchard's theory of autogynephilia as pathologizing or degrading... I don't see it that way' Anne Lawrence"], :tags #{"agp" "Blanchard" "people"}} ; "Anne Lawrence"
+
+{:chapter [3 2] :links ["https://en.wikipedia.org/wiki/American_College_of_Pediatricians"] :texts ["American College of Pediatricians" "American College of Pediatricians has <200 members. Compare to American Academy of Pediatrics w/64000" "'The group was founded in 2002 by a group of pediatricians, including Joseph Zanga, a past president of the American Academy of Pediatrics (AAP), as a protest against the AAP's support for adoption by gay couples. The group's membership has been estimated at between 60 and 200 members, in contrast to the AAP's over 60,000 members.'"] :tags #{"ACP"}}
+{:chapter [3 2] :links ["http://www.citypages.com/news/university-of-minnesota-professors-research-hijacked-6725473"] :texts ["American College of Pediatricians" "A number of researchers accuse ACP of taking their research out of context when citing it" "The ACP argues that schools shouldn't support gay teens because they're probably just confused. ...Except that's not what Remafedi's research suggested at all. His work showed that kids who are confused about their sexuality eventually sort it out-meaning many of them accept being gay."] :tags #{"ACP"}}
+
+;**pull out links!!
+{:chapter [3 1] :links ["https://en.wikipedia.org/wiki/David_Reimer" "http://www.hawaii.edu/PCSS/biblio/articles/1961to1999/1997-sex-reassignment.html" "https://www.ncbi.nlm.nih.gov/pubmed/9080940" "http://archpedi.jamanetwork.com/article.aspx?articleid=518304"], 
+	:texts ["David Reimer" "David Reimer's case strongly suggests gender is in the brain, not socially constructed" "'Psychologist John Money oversaw the [David Reimer] case and reported the reassignment as successful and as evidence that gender identity is primarily learned. Academic sexologist Milton Diamond later reported that Reimer failed to identify as female since the age of 9 to 11.'"], :tags #{"John Money" "biology" "Johns Hopkins" "psychologist" "people"}} ; "Milton Diamond" "David Reimer" 
+
+{:chapter [3 1] :links ["https://en.wikipedia.org/wiki/Harry_Benjamin#Work_with_transsexual_people"], :texts ["pscyhiatrists vs endocrinologists" "From the beginning, pscyhiatrists and endocrinologists were at odds wrt transgenderism" "Despite the psychiatrists with whom Benjamin involved in the case not agreeing on a path of treatment, Benjamin eventually decided to treat the child with estrogen, which had a 'calming effect'"], :tags #{"psychiatrist" "endocrinologist" "Harry Benjamin" "people"}} 
+{:chapter [3 1] :links ["https://en.wikipedia.org/wiki/Reed_Erickson"], :texts ["Reed Erickson" "Reed Erickson funded creation of Harry Benjamin Clinic and the early work of Johns Hopkin's Clinic" "'Erickson continued to be financially successful, eventually amassing a personal fortune estimated at over $40 million, most of which came from canny investments in oil-rich real estate... [Erickson Educational Foundation] funded many early research efforts, including the creation of the Harry Benjamin Foundation, the early work of the Johns Hopkins Clinic...'"], :tags #{"Harry Benjamin" "endocrinologist" "Johns Hopkins" }} ;"Reed Erickson"
+;{:chapter [] :links ["http://web.uvic.ca/~erick123/#transex"] :texts ["Reed Erickson" "early work of the Johns Hopkin's clinic, funded by transman, Reed Erickson" "the early work of the Johns Hopkin's clinic was funded by a financially success transman, Reed Erickson, before being attacked(shut down?) by interloper Paul McHugh."] :tags #{}}
+; "the early work of the Johns Hopkin's clinic was funded by a financially success transman, Reed Erickson, before being attacked(shut down?) by interloper Paul McHugh." ;wiki? primary?  ;religion - strike fucking 3
+{:chapter [3 3] :links ["http://nypost.com/2016/03/11/caitlyn-jenners-politics-spark-debate-in-transgender-ranks/"], :texts ["political access" "Dana Beyer, Caitlyn Jenner, and political access." "activist Dana Beyer said of Caitlyn Jenner, 'We're probably better off if she remains a Republican... We need access'"], :tags #{"people"}} ;  ;"Caitlyn Jenner" "Dana Beyer" ;-2
+;{:chapter [?? 1] :links [""] :texts ["" "" ""] :tags #{"DSM" "DSM-5"}}
+
+{:chapter [2 1] :links ["https://en.wikipedia.org/wiki/Lynn_Conway"] :texts ["Lynn Conway" "'Conway is notable for a number of pioneering achievements, including the Mead & Conway revolution in VLSI design'" "'Conway is notable for a number of pioneering achievements, including the Mead & Conway revolution in VLSI design, which incubated an emerging electronic design automation industry. She worked at IBM in the 1960s and is credited with the invention of generalised dynamic instruction handling, a key advance used in out-of-order execution, used by most modern computer processors to improve performance.'"] :tags #{}}
+{:chapter [2 1] :links ["http://columbiadailyherald.com/news/local-news/james-bennett-column-clearing-misconceptions-about-transgender-people"] :texts ["Amanda Simpson" "'The former chief engineer at Raytheon, who has advanced degrees in physics, engineering and business...'" "'The former chief engineer at Raytheon, who has advanced degrees in physics, engineering and business, greets supporters with a firm resolve to succeed and disarms critics with an engaging sense of humor.'"] :tags #{"success"}}
+{:chapter [2 1] :links ["http://www.outsmartmagazine.com/2016/06/swinging-for-the-fences-houstons-phyllis-frye-paved-the-way-for-the-modern-transgender-movement/?utm_content=bufferaf631&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer"] :texts ["Phyllis Frye" "'[Annise] Parker is referring to America's first out, transgender judge, Phyllis Randolph Frye'" ""] :tags #{"success"}}
+;{:chapter [4 1] :links [""] :texts ["" "" ""] :tags #{}}
+;{:chapter [4 1] :links [""] :texts ["" "" ""] :tags #{}}
+
+;https://www.reddit.com/r/asktransgender/comments/3rws5s/comprehensive_defense_against_antitrans_talking/
+;https://www.youtube.com/watch?v=tGB8Uuffi4M  ;tea party activist
+
+{:chapter [5 1] :links ["http://thefederalist.com/2015/11/09/exclusive-gay-man-explains-his-petition-to-drop-the-t-in-lgbt/"], :texts ["Drop the T" "Some gay men are also trying to 'Drop the T'" ""], :tags #{"drop the T" "gay"}}
+{:chapter [5 1] :links ["https://lifeofbria.com/I-consider-myself-to-be-a-genetic-woman/"] :texts ["comic" "comic (more for entertainment than argumentation)" ""] :tags #{"chromosomes" "intersex"}} ;??
+
+;https://en.wikipedia.org/wiki/Mianne_Bagger
+;http://www.outsports.com/2016/6/1/11814342/transgender-ncaa-volleyball-chloe-psyche-anderson
+
+;http://link.springer.com/article/10.1007/s10508-016-0768-5  ;review of brain straucture research
+
+;Louis Gohmert and gay space colony
+;2 more raytheon engineers: https://hbr.org/2010/01/is-transgender-on-your-agenda/
+;left vs right leaning trans: http://www.spectator.co.uk/2016/05/attack-of-the-transgender-marxists/
+
+;Keith Ablow: "I am with Paul McHugh with whom I studies"; http://equalitymatters.org/emtv/201109260007 
+;resigned from APA over this
+
+;http://www.windycitymediagroup.com/lgbt/Deidre-McCloskey-on-family-and-trans-battles-to-be-won/49026.html
+;{:chapter [] :links [""] :texts ["" "" ""] :tags #{}}
+])
+
+(def arguments
+	[["no male/female brains" ""]
+	
+	]
+)
+
+(print "db count: " (count @db))
+
+;adding search word
+(swap! db #(map (fn [e0] (assoc e0 :words (concat (map (fn [e] (clojure.string/split e #" "))  (e0 :texts)) ) )) %) )  ;wow, this may not work!!  could do it manually... combine for text afterwards... 
+;(str/join (pop (str/split name #" ")))
+;(print @db)
+
+(defc db-f (sort-by :chapter @db))
+
+(def mydiv (div))
+(def myh (h1 :id "qwe" "hello world"))
+
+(defc text-input0 [""] )
+(defc= text-input (apply str text-input0)) ;**interlaced w/'n's??
+
+(def topics (sort (into [] (into #{} (apply concat (map :tags @db)))) )) 
+(defc topic-select (zipmap topics (repeat false)))
+
+(def colors ["rgb(256,192,256)" "rgb(256,256,192)" "rgb(192,256,256)" "rgb(256,192,192)" "rgb(192,256,192)" "rgb(192,192,256)" ])  ;"rgb(192,192,192)"
+
+(defc show-options true)
+
+;**should probably be checkboxes
+(defc show-c-short true)
+(defc show-c-text true) ;twitter length
+(defc show-c-long true)
+(defc show-c-cplink true)
+(defc show-c-link true)
+;(defc show-c-words true)
+(defc show-c-tags true)
+;(defc show-c-long-text
+;(defc show-c-
+
+(def expand-div (div))  ; .appendChild btn-tr
+
+(def empty-string "")
+
+(defc faq? true)
+
 (html
-  (head (title "Hello World"))
-  (body :css {:text-align "center"}
-    (h2 "Server Time")
-    (p (code :text current-time)) 
-    (button :click #(doit) "update")))
+  (head)
+  (body :onload #(cell= (do (. (. js/document getElementById "copybox") select) text-input) )
+;(. js/document onload #(cell= (do (. (. js/document getElementById "copybox") select) text-input) ) ) 
+
+	mydiv
+	;	(.appendChild mydiv myh)
+	;(h1 :id "qwe" "hello world")
+	;(print (.-select myh))
+	;(print (type (.select (.getElementById js/document "qwe"))))
+	
+	
+		(textarea
+			:id "copybox"
+    	  :type "text"
+    	  :placeholder "Type something here"
+    	  :style "width:400px; height:100px"
+		
+    	  ;; The cell is used as the value of the input.
+    	  :value text-input
+	
+	      ;; The on-keyup event fires on every keystroke for demo purposes. In
+	      ;; practice you should only update on-blur or on-change.
+	      :keyup #(reset! text-input @%)   )
+
+	      
+	(print (type (. js/document getElementById select "copybox")) ) ;**not working??
+	;(.select (.getElementById js/document "")) 
+      
+	(button :click #(reset! text-input0 [""]) "clear")
+;    (button :click #(reset! db-f @db) "reset fitlers") ;?? because 2 way filtering?? 
+    
+    (button :click #(swap! faq? not) "instructions")
+	(h5 :toggle faq? "There's a lot of inaccurate and incomplete information regarding transpeople being passed around. This app was written to make it easy to hit the high points and pass them on to others who might benefit. To grab some text and the associated link, double click the text, available in 3 lengths for convenience, and both will appear in the box at the top, selected and ready to be copied. For just the text, click once, and for just the link click on the separate link box. Additional functionality is planned, in terms of searching/filtering and adding more information. This is just the Alpha version. I know it need a lot of work, and things will hopefully change quickly over the next month(June). Thanks."
+	"\n Also, for the time being, you have to manually clear the text box using the button... (alpha)")
+    
+    ;**topic/tag filters - **run all filters ea time!!**
+;	(table (tr (td (text "topics: ")) 
+;		(for [r (partition-all 10 topics)] (tr 
+;			(for [e r] (td :click #(do  (swap! topic-select update-in [e] not) (reset! db-f @db) (doseq [[k v] @topic-select] (if v (swap! db-f (partial filter (fn [a] (contains? (a :tags) k)) )  ))  ) )    
+			; -> apply all filters each time!!  **also, highlight selected boxes
+		
+;							:style (cell= (str "border-style:solid;border-color:black;border-width:1px;" (if (topic-select e) "background-color:rgb(192,192,192)" ""))) (text "~{e}" )))))  ))
+		
+		;**reattach main table on select?!?!   WAIT, do we filter from here?!?!   (show filtered options??)
+ 
+ 	;**Columns**
+	(table (tr (td (text "Columns: ")) (td (button :click #(swap! show-c-short not) "short text")) (td (button :click #(swap! show-c-text not) "text")) (td (button :click #(swap! show-c-long not) "long text")) 
+	;(td (button :click #(swap! show-c-tags not) "tags"))   
+			(td (button :click #(swap! show-c-cplink not) "cpy link")) (td (button :click #(swap! show-c-link not) "link")))  )  
+		;(td (button :click #() ""))  ;(td (button :click #(swap! show-c-words not) "words"))
+
+
+
+	;**MAIN TABLE**
+	;**need color outlines... alternating? rainbow?
+	;inline html section
+	(table
+		(loop-tpl :bindings [{ch :chapter lnks :links txts :texts tgs :tags wrds :words} db-f]
+			(tr :style (str "background-color:" (colors (dec (@ch 1))))
+				(td :click #() :style (str "background-color:" (colors (dec (@ch 0)))) (text "-~{(ch 0)}-"))  ;**not sure this is gonna work
+				(td :click #() (text "-~{(ch 1)}-"))
+
+				(td :toggle show-c-short
+					:dblclick #(do (swap! text-input0 pop) (swap! text-input0 pop) (swap! text-input0 conj (first @lnks)) (swap! text-input0 conj "\n") (. (. js/document getElementById "copybox") select) )
+					:click #(do (swap! text-input0 conj (first @txts)) (swap! text-input0 conj "\n")  (. (. js/document getElementById "copybox") select))  ;(swap! text-input0 conj (first @txts)) 
+						(text "~{(first txts)}") )
+
+				(td :toggle show-c-text
+					:dblclick #(do (swap! text-input0 pop) (swap! text-input0 pop) (swap! text-input0 conj (first @lnks)) (swap! text-input0 conj "\n") (. (. js/document getElementById "copybox") select) )
+					:click #(do (swap! text-input0 conj (second @txts)) (swap! text-input0 conj "\n")  (. (. js/document getElementById "copybox") select))  ;(swap! text-input0 conj (second @txts)) 
+						(text "~{(second txts)}") )
+
+				(td :toggle show-c-long
+					:dblclick #(do (swap! text-input0 pop) (swap! text-input0 pop) (swap! text-input0 conj (first @lnks)) (swap! text-input0 conj "\n") (. (. js/document getElementById "copybox") select) )
+					:click #(do (swap! text-input0 conj (last @txts)) (swap! text-input0 conj "\n")  (. (. js/document getElementById "copybox") select))  ;(swap! text-input0 conj (first @txts)) 
+						(text "~{(if (= empty-string (last txts)) (second txts) (last txts))}") )   ;easy default for long texts
+	
+					;(ul (for [t txts] (li (text "~{t}")))) ;slow?? list??    :click??
+				;(td :toggle show-c-tags (text "~{tgs}"))  ;**for testing, will be taken out!!
+					
+				;(td :toggle show-c-words (text "~{wrds}"))  ;**for testing, will be taken out!!
+				(td :toggle show-c-cplink (button :click #(do (swap! text-input0 conj (first @lnks)) (swap! text-input0 conj "\n") (. (. js/document getElementById "copybox") select)	) (text "copy link") ) ) ;**DOESN'T work
+				(td :toggle show-c-link (a :target "_blank" :href (cell= (first lnks)) (text "~{(first lnks)}") ))   ;**in separate column for immediate use (not copying) OR "copy" btn
+				;(td (a :href (first @lnks)))
+			)
+				;(td (text )) ;as html... as-html as btn??
+			
+		)
+	)
+
+	;(div (h5 "If you'd like to support this project, you can" (a :href "https://www.patreon.com/UpperCayce" " do so on patreon" ) ))
+	(div (h5 "If you're in need of a programmer, please email: jtollison78@gmail.com")) ;separate email mailto: ?? ;**also, contact?? (a href "mailto:jtollison78@gmail.com")
+
+
+
+;  (show-todo)
+
+)))
