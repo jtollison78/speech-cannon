@@ -22,7 +22,10 @@
     (wrap-dir-index)
     (wrap-file-info)))
 
+
 (defn -main [& [port]]
+  (def db (slurp "./argument-db")) ;testing spit location
+  (print db db db db db db db db db)
   (let [port (Integer. (or port 8000))]
     (run-jetty #'app {:port port :join? false})))
 
