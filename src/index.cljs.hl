@@ -20,15 +20,7 @@
   (doit))
 
 
-;NOTE: this project builds on the hoplon-heroku-deploy code found here:
-;open source...
-
-
 (defc db [
-;** Notes for those looking to adapt speec-cannon for your own topics: comments are preceded by a semi-colon. Nothing after a semi-colon means anything codewise so don't try to make sense of it.
-;the format you should be concerned with is: {:chapter [] :links [""] :texts ["" "" ""] :tags #{}}
-;fill in these 4 areas with entries for your topic, in the same way you see it below, and you should be good to go
-
 ;(cell= (str "<a href=\"" (first lnks) "\">XXXX</a>"))
 ;**chapter largely supplant topics, BUT some crossover("full text") (reason for not doing a tree?)
 ;:chapter [1 1] = science/papers, brain/physiologic/endogamous
@@ -37,7 +29,7 @@
 ;:chapter [2 1] = news/politics/bathrooms, cis
 ;			[2 2] = bathroom other
 ;			[2 3] = 
-;:chapter [3 1] = people, scientists	[3 1 1] = ,...
+;:chapter [3 1] = people, scientists	[3 1 1] = Paul McHugh,...
 ;			[3 2] = activists
 ;:chapter [4 1] = other
 ;**so, yeah, need boxes to click on that gather links for ea group level
@@ -308,7 +300,7 @@ CONCLUSIONS: The ACC and insula are regions that have been noted as being relate
 
 	;(div (h5 "If you'd like to support this project, you can" (a :href "https://www.patreon.com/UpperCayce" " do so on patreon" ) ))
 	(div (h5 "If you're in need of a programmer, please email: jtollison78@gmail.com")) ;separate email mailto: ?? ;**also, contact?? (a href "mailto:jtollison78@gmail.com")
-	(div (h5 "If you would like to power your cause with speech cannon: https://github.com/jtollison78/speech-cannon"))
+	(div (h5 "If you would like to power your cause with speech cannon: https://github.com/jtollison78/speech-cannon")) ;separate email mailto: ?? ;**also, contact?? (a href "mailto:jtollison78@gmail.com")
 
 
 

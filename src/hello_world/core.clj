@@ -24,8 +24,8 @@
 
 
 (defn -main [& [port]]
-  (def db (slurp "./argument-db")) ;testing spit location
-  (print db db db db db db db db db)
+  ;(def db (slurp "./argument-db")) ;testing spit location
+  ;(print db db db db db db db db db)
   (let [port (Integer. (or port 8000))]
     (run-jetty #'app {:port port :join? false})))
 
